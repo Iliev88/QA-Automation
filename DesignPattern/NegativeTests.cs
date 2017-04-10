@@ -1,9 +1,11 @@
-﻿using DesignPattern.Pages.HomePage;
+﻿using DesignPattern.Models;
+using DesignPattern.Pages.HomePage;
 using DesignPattern.Pages.RegistrationPage;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using SeleniumDesignPatternsDemo.Models;
+using OpenQA.Selenium.Interactions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -76,21 +78,7 @@ namespace DesignPattern
         public void RegisterWithoutLastName()
         {
             var registrationPage = new RegistrationPage(driver);
-            var user = new RegistrateUser("Iliya",
-                                          "",
-                                           new List<bool> { true, true, false },
-                                           new List<bool> { false, false, true },
-                                           "Bulgaria",
-                                           "3",
-                                           "17",
-                                           "1987",
-                                           "0897675645",
-                                           "lichkata456",
-                                           "lichkata456@abv.bg",
-                                           @"C:\Users\Iliya\Desktop\photo.jpeg",
-                                           "ALA BALA",
-                                           "12345678",
-                                           "12345678");
+            var user = AccessExcelData.GetTestData("RegisterWithoutLastName");
 
             registrationPage.NavigateTo();
             registrationPage.FillRegistrationForm(user);

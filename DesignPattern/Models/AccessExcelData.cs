@@ -1,12 +1,12 @@
-﻿using SeleniumDesignPatternsDemo.Models;
+﻿using Dapper;
+using SeleniumDesignPatternsDemo.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data.OleDb;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Dapper;
-using System.Data.OleDb;
 
 namespace DesignPattern.Models
 {
@@ -33,7 +33,7 @@ namespace DesignPattern.Models
 
                 var query = string.Format("select * from [DataSet$] where key = '{0}'", keyName);
 
-                var value = connection.Query<RegistrateUser>(query).FirstOrDefault();
+                var value = connection.Query<RegistrateUser>(query).First();
 
                 connection.Close();
 
