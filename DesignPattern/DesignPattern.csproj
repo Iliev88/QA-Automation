@@ -56,7 +56,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\ExcelData.cs" />
+    <Compile Include="Models\AccessExcelData.cs" />
     <Compile Include="Models\RegistrateUser.cs" />
     <Compile Include="Pages\AutomationPracticePage\AutomationPage.cs" />
     <Compile Include="Pages\AutomationPracticePage\AutomationPageAsserter.cs" />
