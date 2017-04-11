@@ -55,7 +55,12 @@ namespace SeleniumDesignPatternsDemo.Models
             this.password = password;
             this.confirmPassword = confirmPassword;
         }
-        public string Key { get; set; }
+
+        public string Key
+        {
+            get { return this.key; }
+            set { this.key = value; }
+        }
 
         public string FirstName
         {

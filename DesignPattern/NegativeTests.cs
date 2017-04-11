@@ -80,7 +80,7 @@ namespace DesignPattern
         {
             var registrationPage = new RegistrationPage(driver);
             var user = AccessExcelData.GetTestData("RegisterWithoutLastName");
-
+            
             registrationPage.NavigateTo();
             registrationPage.FillRegistrationForm(user);
 

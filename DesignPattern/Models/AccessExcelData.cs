@@ -21,8 +21,8 @@ namespace DesignPattern.Models
             var connection = string.Format(@"Provider=Microsoft.ACE.OLEDB.12.0;
                                              Data Source = {0};
                                              Extended Properties=Excel 12.0;", path + fileName);
-            
-            
+
+
             return connection;
         }
 
@@ -34,7 +34,7 @@ namespace DesignPattern.Models
 
                 var query = string.Format("SELECT * FROM [DataSet$] WHERE KEY = '{0}'", keyName);
 
-                var value = connection.Query<RegistrateUser>(query).First();
+                var value = connection.Query<RegistrateUser>(query).FirstOrDefault();
 
                 connection.Close();
 
