@@ -7,8 +7,8 @@ namespace SeleniumDesignPatternsDemo.Models
         private string key;
         private string firstName;
         private string lastName;
-        private List<bool> martialStatus;
-        private List<bool> hobbies;
+        private string martialStatus;
+        private string hobbies;
         private string country;
         private string birthMonth;
         private string birthDay;
@@ -24,6 +24,8 @@ namespace SeleniumDesignPatternsDemo.Models
         public RegistrateUser(string key,
                               string firstName,
                               string lastName,
+                              //string martialStatus,
+                              //string hobbies,
                               string country,
                               string birthMonth,
                               string birthDay,
@@ -40,6 +42,8 @@ namespace SeleniumDesignPatternsDemo.Models
             this.key = key;
             this.firstName = firstName;
             this.lastName = lastName;
+            //this.martialStatus = martialStatus;
+            //this.hobbies = hobbies;
             this.country = country;
             this.birthMonth = birthMonth;
             this.birthDay = birthDay;
@@ -71,13 +75,13 @@ namespace SeleniumDesignPatternsDemo.Models
             set { this.lastName = value; }
         }
 
-        public List<bool> MartialStatus
+        public string MartialStatus
         {
             get { return martialStatus; }
             set { martialStatus = value; }
         }
 
-        public List<bool> Hobbies
+        public string Hobbies
         {
             get { return hobbies; }
             set { hobbies = value; }
