@@ -49,7 +49,8 @@ namespace DesignPattern
         public void RegisterWithValidData()
         {
             var registrationPage = new RegistrationPage(driver);
-            var user = new RegistrateUser("Iliya",
+            var user = new RegistrateUser("",
+                "Iliya",
                                           "Iliev",
                                            new List<bool> { true, true, false },
                                            new List<bool> { false, false, true },
@@ -93,7 +94,8 @@ namespace DesignPattern
         public void RegisterWithoutHobby()
         {
             var registrationPage = new RegistrationPage(driver);
-            var user = new RegistrateUser("Iliya",
+            var user = new RegistrateUser("",
+                "Iliya",
                                           "Iliev",
                                            new List<bool> { false, false, false },
                                            new List<bool> { true, true, true },
@@ -122,7 +124,8 @@ namespace DesignPattern
         public void RegisterWithoutPhone()
         {
             var registrationPage = new RegistrationPage(driver);
-            var user = new RegistrateUser("Iliya",
+            var user = new RegistrateUser("",
+                "Iliya",
                                           "Iliev",
                                            new List<bool> { false, false, false },
                                            new List<bool> { false, true, true },
@@ -151,7 +154,8 @@ namespace DesignPattern
         public void RegisterWithShortPhone()
         {
             var registrationPage = new RegistrationPage(driver);
-            var user = new RegistrateUser("Iliya",
+            var user = new RegistrateUser("",
+                "Iliya",
                                           "Iliev",
                                            new List<bool> { false, false, false },
                                            new List<bool> { false, true, true },
@@ -180,7 +184,8 @@ namespace DesignPattern
         public void RegisterWithLongPhone()
         {
             var registrationPage = new RegistrationPage(driver);
-            var user = new RegistrateUser("Iliya",
+            var user = new RegistrateUser("",
+                "Iliya",
                                           "Iliev",
                                            new List<bool> { false, false, false },
                                            new List<bool> { false, true, true },
@@ -209,7 +214,8 @@ namespace DesignPattern
         public void RegisterWithoutUsername()
         {
             var registrationPage = new RegistrationPage(driver);
-            var user = new RegistrateUser("Iliya",
+            var user = new RegistrateUser("",
+                "Iliya",
                                           "Iliev",
                                            new List<bool> { false, false, false },
                                            new List<bool> { false, true, true },
@@ -238,7 +244,8 @@ namespace DesignPattern
         public void RegisterWithoutEmail()
         {
             var registrationPage = new RegistrationPage(driver);
-            var user = new RegistrateUser("Iliya",
+            var user = new RegistrateUser("",
+                "Iliya",
                                           "Iliev",
                                            new List<bool> { false, false, false },
                                            new List<bool> { false, true, true },
@@ -267,7 +274,8 @@ namespace DesignPattern
         public void RegisterWithWrongEmail()
         {
             var registrationPage = new RegistrationPage(driver);
-            var user = new RegistrateUser("Iliya",
+            var user = new RegistrateUser("",
+                "Iliya",
                                           "Iliev",
                                            new List<bool> { false, false, false },
                                            new List<bool> { false, true, true },
@@ -296,7 +304,8 @@ namespace DesignPattern
         public void RegisterWithoutPassword()
         {
             var registrationPage = new RegistrationPage(driver);
-            var user = new RegistrateUser("Iliya",
+            var user = new RegistrateUser("",
+                "Iliya",
                                           "Iliev",
                                            new List<bool> { false, false, false },
                                            new List<bool> { false, true, true },
@@ -325,7 +334,8 @@ namespace DesignPattern
         public void RegisterWithoutConfirmationPassword()
         {
             var registrationPage = new RegistrationPage(driver);
-            var user = new RegistrateUser("Iliya",
+            var user = new RegistrateUser("",
+                "Iliya",
                                           "Iliev",
                                            new List<bool> { false, false, false },
                                            new List<bool> { false, true, true },
@@ -354,7 +364,8 @@ namespace DesignPattern
         public void RegisterWithShortPassword()
         {
             var registrationPage = new RegistrationPage(driver);
-            var user = new RegistrateUser("Iliya",
+            var user = new RegistrateUser("",
+                "Iliya",
                                           "Iliev",
                                            new List<bool> { false, false, false },
                                            new List<bool> { false, true, true },
@@ -383,7 +394,8 @@ namespace DesignPattern
         public void RegisterWithUnmatchedPasswords()
         {
             var registrationPage = new RegistrationPage(driver);
-            var user = new RegistrateUser("Iliya",
+            var user = new RegistrateUser("",
+                "Iliya",
                                           "Iliev",
                                            new List<bool> { false, false, false },
                                            new List<bool> { false, true, true },
@@ -412,7 +424,8 @@ namespace DesignPattern
         public void RegisterWithoutLastNameAndPhone()
         {
             var registrationPage = new RegistrationPage(driver);
-            var user = new RegistrateUser("Iliya",
+            var user = new RegistrateUser("",
+                "Iliya",
                                           "",
                                            new List<bool> { false, false, false },
                                            new List<bool> { false, true, true },
@@ -442,7 +455,8 @@ namespace DesignPattern
         public void RegisterWithoutLastNameAndUsername()
         {
             var registrationPage = new RegistrationPage(driver);
-            var user = new RegistrateUser("Iliya",
+            var user = new RegistrateUser("",
+                "Iliya",
                                           "",
                                            new List<bool> { false, false, false },
                                            new List<bool> { false, true, true },
@@ -472,7 +486,8 @@ namespace DesignPattern
         public void RegisterWithoutLastNameAndEmail()
         {
             var registrationPage = new RegistrationPage(driver);
-            var user = new RegistrateUser("Iliya",
+            var user = new RegistrateUser("",
+                "Iliya",
                                           "",
                                            new List<bool> { false, false, false },
                                            new List<bool> { false, true, true },
@@ -502,7 +517,8 @@ namespace DesignPattern
         public void RegisterWithoutLastNameAndWrongEmail()
         {
             var registrationPage = new RegistrationPage(driver);
-            var user = new RegistrateUser("Iliya",
+            var user = new RegistrateUser("",
+                "Iliya",
                                           "",
                                            new List<bool> { false, false, false },
                                            new List<bool> { false, true, true },
@@ -532,7 +548,8 @@ namespace DesignPattern
         public void RegisterWithoutHobbiesAndUsername()
         {
             var registrationPage = new RegistrationPage(driver);
-            var user = new RegistrateUser("Iliya",
+            var user = new RegistrateUser("",
+                "Iliya",
                                           "Iliev",
                                            new List<bool> { false, true, true },
                                            new List<bool> { true, true, true },
@@ -562,7 +579,8 @@ namespace DesignPattern
         public void RegisterWithoutUsernameAndPassword()
         {
             var registrationPage = new RegistrationPage(driver);
-            var user = new RegistrateUser("Iliya",
+            var user = new RegistrateUser("",
+                "Iliya",
                                           "Iliev",
                                            new List<bool> { false, true, true },
                                            new List<bool> { false, true, true },
@@ -592,7 +610,8 @@ namespace DesignPattern
         public void RegisterWithNegativePhone()
         {
             var registrationPage = new RegistrationPage(driver);
-            var user = new RegistrateUser("Iliya",
+            var user = new RegistrateUser("",
+                "Iliya",
                                           "Iliev",
                                            new List<bool> { false, false, false },
                                            new List<bool> { false, true, true },
@@ -621,7 +640,8 @@ namespace DesignPattern
         public void RegisterWithNegativePhoneAndWrongEmail()
         {
             var registrationPage = new RegistrationPage(driver);
-            var user = new RegistrateUser("Iliya",
+            var user = new RegistrateUser("",
+                "Iliya",
                                           "Iliev",
                                            new List<bool> { false, false, false },
                                            new List<bool> { false, true, true },
@@ -651,7 +671,8 @@ namespace DesignPattern
         public void RegisterWithWrongEmailAndMismatchedPasswords()
         {
             var registrationPage = new RegistrationPage(driver);
-            var user = new RegistrateUser("Iliya",
+            var user = new RegistrateUser("",
+                "Iliya",
                                           "Iliev",
                                            new List<bool> { false, false, false },
                                            new List<bool> { false, true, true },
@@ -681,7 +702,8 @@ namespace DesignPattern
         public void RegisterWithWrongEmailAndMismatchedAndShortPasswords()
         {
             var registrationPage = new RegistrationPage(driver);
-            var user = new RegistrateUser("Iliya",
+            var user = new RegistrateUser("",
+                "Iliya",
                                           "Iliev",
                                            new List<bool> { false, false, false },
                                            new List<bool> { false, true, true },

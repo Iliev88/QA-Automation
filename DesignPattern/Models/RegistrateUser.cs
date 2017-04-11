@@ -4,6 +4,7 @@ namespace SeleniumDesignPatternsDemo.Models
 {
     public class RegistrateUser
     {
+        private string key;
         private string firstName;
         private string lastName;
         private List<bool> martialStatus;
@@ -20,7 +21,8 @@ namespace SeleniumDesignPatternsDemo.Models
         private string password;
         private string confirmPassword;
 
-        public RegistrateUser(string firstName,
+        public RegistrateUser(string key,
+                              string firstName,
                               string lastName,
                               List<bool> martialStatus,
                               List<bool> hobbies,
@@ -36,6 +38,7 @@ namespace SeleniumDesignPatternsDemo.Models
                               string password,
                               string confirmPassword)
         {
+            this.key = key;
             this.firstName = firstName;
             this.lastName = lastName;
             this.martialStatus = martialStatus;
@@ -52,6 +55,7 @@ namespace SeleniumDesignPatternsDemo.Models
             this.password = password;
             this.confirmPassword = confirmPassword;
         }
+        public string Key { get; set; }
 
         public string FirstName
         {
