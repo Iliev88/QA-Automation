@@ -20,8 +20,8 @@ namespace DesignPattern.Pages.RegistrationPage
         {
             Type(FirstName, user.FirstName);
             Type(LastName, user.LastName);
-           // ClickOnElements(MartialStatus, user.MartialStatus);
-           // ClickOnElements(Hobbies, user.Hobbies);
+            ClickOnElements(MartialStatus, user.MartialStatus);
+            ClickOnElements(Hobbies, user.Hobbies);
             CountryOption.SelectByText(user.Country);
             MonthOption.SelectByText(user.BirthMonth);
             DayOption.SelectByText(user.BirthDay);
@@ -37,11 +37,16 @@ namespace DesignPattern.Pages.RegistrationPage
             SubmitButton.Click();
         }
 
-        private void ClickOnElements(string elements, List<bool> conditions)
+        private void ClickOnElements(List<IWebElement> elements, string conditions)
         {
-            for (int i = 0; i < conditions.Count - 1; i++)
+            var choices = conditions.Split();
+
+            for (int i = 0; i < choices.Length; i++)
             {
-              //  elements[i].Click();
+                if (choices[i].Equals("true"))
+                {
+                    elements[i].Click();
+                }
             }
         }
 

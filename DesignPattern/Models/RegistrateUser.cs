@@ -24,8 +24,8 @@ namespace SeleniumDesignPatternsDemo.Models
         public RegistrateUser(string key,
                               string firstName,
                               string lastName,
-                              //string martialStatus,
-                              //string hobbies,
+                              string martialStatus,
+                              string hobbies,
                               string country,
                               string birthMonth,
                               string birthDay,
@@ -42,8 +42,8 @@ namespace SeleniumDesignPatternsDemo.Models
             this.key = key;
             this.firstName = firstName;
             this.lastName = lastName;
-            //this.martialStatus = martialStatus;
-            //this.hobbies = hobbies;
+            this.martialStatus = martialStatus;
+            this.hobbies = hobbies;
             this.country = country;
             this.birthMonth = birthMonth;
             this.birthDay = birthDay;
