@@ -21,20 +21,20 @@ namespace SeleniumDesignPatternsDemo.Models
         private string confirmPassword;
 
         public RegistrateUser(string firstName,
-                                string lastName,
-                                List<bool> martialStatus,
-                                List<bool> hobbies,
-                                string country,
-                                string birthMonth,
-                                string birthDay,
-                                string birthYear,
-                                string phone,
-                                string username,
-                                string email,
-                                string picture,
-                                string description,
-                                string password,
-                                string confirmPassword)
+                              string lastName,
+                              List<bool> martialStatus,
+                              List<bool> hobbies,
+                              string country,
+                              string birthMonth,
+                              string birthDay,
+                              string birthYear,
+                              string phone,
+                              string username,
+                              string email,
+                              string picture,
+                              string description,
+                              string password,
+                              string confirmPassword)
         {
             this.firstName = firstName;
             this.lastName = lastName;

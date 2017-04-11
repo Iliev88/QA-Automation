@@ -14,13 +14,13 @@ namespace DesignPattern.Models
     {
         public static string TestDataFileConnection()
         {
-            //var path = ConfigurationManager.AppSettings["TestDataSheetPath"];
+            var path = ConfigurationManager.AppSettings["TestDataSheetPath"];
 
-            //var fileName = "UserData.xlsx";
+            var fileName = "UserData.xlsx";
 
             var connection = string.Format(@"Provider=Microsoft.ACE.OLEDB.12.0;
-                                             Data Source = D:\QA Automation\QA-Automation\DesignPattern\DataDrivenTests\UserData.xlsx;
-                                             Extended Properties=Excel 12.0;");
+                                             Data Source = {0};
+                                             Extended Properties=Excel 12.0;", path + fileName);
             
             
             return connection;
