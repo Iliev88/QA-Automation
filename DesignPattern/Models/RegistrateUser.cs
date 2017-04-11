@@ -23,37 +23,12 @@ namespace SeleniumDesignPatternsDemo.Models
 
         public RegistrateUser(string key,
                               string firstName,
-                              string lastName,
-                              List<bool> martialStatus,
-                              List<bool> hobbies,
-                              string country,
-                              string birthMonth,
-                              string birthDay,
-                              string birthYear,
-                              string phone,
-                              string username,
-                              string email,
-                              string picture,
-                              string description,
-                              string password,
-                              string confirmPassword)
+                              string lastName
+                              )
         {
             this.key = key;
             this.firstName = firstName;
             this.lastName = lastName;
-            this.martialStatus = martialStatus;
-            this.hobbies = hobbies;
-            this.country = country;
-            this.birthMonth = birthMonth;
-            this.birthDay = birthDay;
-            this.birthYear = birthYear;
-            this.phone = phone;
-            this.username = username;
-            this.email = email;
-            this.picture = picture;
-            this.description = description;
-            this.password = password;
-            this.confirmPassword = confirmPassword;
         }
 
         public string Key
