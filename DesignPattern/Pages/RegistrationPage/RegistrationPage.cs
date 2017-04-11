@@ -20,8 +20,8 @@ namespace DesignPattern.Pages.RegistrationPage
         {
             Type(FirstName, user.FirstName);
             Type(LastName, user.LastName);
-            ClickOnElements(MartialStatus, user.MartialStatus);
-            ClickOnElements(Hobbies, user.Hobbies);
+            //ClickOnElements(MartialStatus, user.MartialStatus);
+            //ClickOnElements(Hobbies, user.Hobbies);
             CountryOption.SelectByText(user.Country);
             MonthOption.SelectByText(user.BirthMonth);
             DayOption.SelectByText(user.BirthDay);
