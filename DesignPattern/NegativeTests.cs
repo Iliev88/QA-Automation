@@ -73,7 +73,7 @@ namespace DesignPattern
         }
 
         [Test]
-        [Property("Priority", 2)]
+        [Property("Priority", 1)]
         [Author("Iliya Iliev")]
         public void RegisterWithoutLastName()
         {

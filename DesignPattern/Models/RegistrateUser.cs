@@ -55,14 +55,14 @@ namespace SeleniumDesignPatternsDemo.Models
 
         public string FirstName
         {
-            get { return firstName; }
-            set { firstName = value; }
+            get { return this.firstName; }
+            set { this.firstName = value; }
         }
 
         public string LastName
         {
-            get { return lastName; }
-            set { lastName = value; }
+            get { return this.lastName; }
+            set { this.lastName = value; }
         }
 
         public List<bool> MartialStatus

@@ -31,7 +31,7 @@ namespace DesignPattern.Models
             {
                 connection.Open();
 
-                var query = string.Format("select * from [DataSet$] where key = '{0}'", keyName);
+                var query = string.Format("SELECT * FROM [DataSet$] WHERE KEY = '{0}'", keyName);
 
                 var value = connection.Query<RegistrateUser>(query).First();
 
