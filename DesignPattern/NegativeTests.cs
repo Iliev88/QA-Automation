@@ -198,7 +198,7 @@ namespace DesignPattern
         [Test]
         [Property("Negative Tests", 1)]
         [Author("Iliya Iliev")]
-        public void RegisterWithshortPassword()
+        public void RegisterWithShortPassword()
         {
             var registrationPage = new RegistrationPage(driver);
             var user = AccessExcelData.GetTestData("RegisterWithShortPassword");
@@ -208,6 +208,185 @@ namespace DesignPattern
 
             registrationPage.AssertPasswordErrorMessage("Minimum 8 characters required");
 
+        }
+
+        [Test]
+        [Property("Negative Tests", 1)]
+        [Author("Iliya Iliev")]
+        public void RegisterWithUnmatchedPasswords()
+        {
+            var registrationPage = new RegistrationPage(driver);
+            var user = AccessExcelData.GetTestData("RegisterWithUnmatchedPasswords");
+
+            registrationPage.NavigateTo();
+            registrationPage.FillRegistrationForm(user);
+
+            registrationPage.AssertConfirmationPasswordErrorMessage("Fields do not match");
+
+        }
+
+        [Test]
+        [Property("Negative Tests", 1)]
+        [Author("Iliya Iliev")]
+        public void RegisterWithoutLastNameAndPhone()
+        {
+            var registrationPage = new RegistrationPage(driver);
+            var user = AccessExcelData.GetTestData("RegisterWithoutLastNameAndPhone");
+
+            registrationPage.NavigateTo();
+            registrationPage.FillRegistrationForm(user);
+
+            registrationPage.AssertNamesErrorMessage("This field is required");
+            registrationPage.AssertMissingPhoneErrorMessage("This field is required");
+        }
+
+        [Test]
+        [Property("Negative Tests", 1)]
+        [Author("Iliya Iliev")]
+        public void RegisterWithoutLastNameAndUsername()
+        {
+            var registrationPage = new RegistrationPage(driver);
+            var user = AccessExcelData.GetTestData("RegisterWithoutLastNameAndUsername");
+
+            registrationPage.NavigateTo();
+            registrationPage.FillRegistrationForm(user);
+
+            registrationPage.AssertNamesErrorMessage("This field is required");
+            registrationPage.AssertUsernameErrorMessage("This field is required");
+        }
+
+        [Test]
+        [Property("Negative Tests", 1)]
+        [Author("Iliya Iliev")]
+        public void RegisterWithoutLastNameAndEmail()
+        {
+            var registrationPage = new RegistrationPage(driver);
+            var user = AccessExcelData.GetTestData("RegisterWithoutLastNameAndEmail");
+
+            registrationPage.NavigateTo();
+            registrationPage.FillRegistrationForm(user);
+
+            registrationPage.AssertNamesErrorMessage("This field is required");
+            registrationPage.AssertEmailErrorMessage("This field is required");
+        }
+
+        [Test]
+        [Property("Negative Tests", 1)]
+        [Author("Iliya Iliev")]
+        public void RegisterWithoutLastNameAndWrongEmail()
+        {
+            var registrationPage = new RegistrationPage(driver);
+            var user = AccessExcelData.GetTestData("RegisterWithoutLastNameAndWrongEmail");
+
+            registrationPage.NavigateTo();
+            registrationPage.FillRegistrationForm(user);
+
+            registrationPage.AssertNamesErrorMessage("This field is required");
+            registrationPage.AssertEmailErrorMessage("Invalid email address");
+        }
+
+        [Test]
+        [Property("Negative Tests", 1)]
+        [Author("Iliya Iliev")]
+        public void RegisterWithoutHobbiesAndUsername()
+        {
+            var registrationPage = new RegistrationPage(driver);
+            var user = AccessExcelData.GetTestData("RegisterWithoutHobbiesAndUsername");
+
+            registrationPage.NavigateTo();
+            registrationPage.FillRegistrationForm(user);
+
+            registrationPage.AssertHobbiesErrorMessage("This field is required");
+            registrationPage.AssertUsernameErrorMessage("This field is required");
+        }
+
+        [Test]
+        [Property("Negative Tests", 1)]
+        [Author("Iliya Iliev")]
+        public void RegisterWithoutUsernameAndPassword()
+        {
+            var registrationPage = new RegistrationPage(driver);
+            var user = AccessExcelData.GetTestData("RegisterWithoutUsernameAndPassword");
+
+            registrationPage.NavigateTo();
+            registrationPage.FillRegistrationForm(user);
+
+            registrationPage.AssertUsernameErrorMessage("This field is required");
+            registrationPage.AssertPasswordErrorMessage("This field is required");
+        }
+
+        [Test]
+        [Property("Negative Tests", 1)]
+        [Author("Iliya Iliev")]
+        public void RegisterWithNegativePhone()
+        {
+            var registrationPage = new RegistrationPage(driver);
+            var user = AccessExcelData.GetTestData("RegisterWithNegativePhone");
+
+            registrationPage.NavigateTo();
+            registrationPage.FillRegistrationForm(user);
+
+            registrationPage.AssertMissingPhoneErrorMessage("Minimum 10 Digits starting with Country Code");
+        }
+
+        [Test]
+        [Property("Negative Tests", 1)]
+        [Author("Iliya Iliev")]
+        public void RegisterWithNegativePhoneAndWrongEmail()
+        {
+            var registrationPage = new RegistrationPage(driver);
+            var user = AccessExcelData.GetTestData("RegisterWithNegativePhoneAndWrongEmail");
+
+            registrationPage.NavigateTo();
+            registrationPage.FillRegistrationForm(user);
+
+            registrationPage.AssertMissingPhoneErrorMessage("Minimum 10 Digits starting with Country Code");
+            registrationPage.AssertEmailErrorMessage("Invalid email address");
+        }
+
+        [Test]
+        [Property("Negative Tests", 1)]
+        [Author("Iliya Iliev")]
+        public void RegisterWithWrongEmailAndMismatchedPasswords()
+        {
+            var registrationPage = new RegistrationPage(driver);
+            var user = AccessExcelData.GetTestData("RegisterWithWrongEmailAndMismatchedPasswords");
+
+            registrationPage.NavigateTo();
+            registrationPage.FillRegistrationForm(user);
+
+            registrationPage.AssertEmailErrorMessage("Invalid email address");
+            registrationPage.AssertConfirmationPasswordErrorMessage("Fields do not match");
+        }
+
+        [Test]
+        [Property("Negative Tests", 1)]
+        [Author("Iliya Iliev")]
+        public void RegisterWithWrongEmailAndMismatchedAndShortPasswords()
+        {
+            var registrationPage = new RegistrationPage(driver);
+            var user = AccessExcelData.GetTestData("RegisterWithWrongEmailAndMismatchedAndShortPasswords");
+
+            registrationPage.NavigateTo();
+            registrationPage.FillRegistrationForm(user);
+
+            registrationPage.AssertEmailErrorMessage("Invalid email address");
+            registrationPage.AssertPasswordErrorMessage("Minimum 8 characters required");
+            registrationPage.AssertConfirmationPasswordErrorMessage("Fields do not match");
+        }
+
+        [Test]
+        [Property("Negative Tests", 1)]
+        [Author("Iliya Iliev")]
+        public void RegisterAlreadyRegisteredUser()
+        {
+            var registrationPage = new RegistrationPage(driver);
+            var user = AccessExcelData.GetTestData("RegisterAlreadyRegisteredUser");
+
+            registrationPage.NavigateTo();
+            registrationPage.FillRegistrationForm(user);
+
+            registrationPage.AssertAlreadyRegisteredUserErrorMessage("Error: Username already exists");
         }
 
     }

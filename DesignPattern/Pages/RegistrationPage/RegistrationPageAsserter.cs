@@ -56,5 +56,11 @@ namespace DesignPattern.Pages.RegistrationPage
             Assert.IsTrue(page.ErrorMessagesForMissingConfirmationPassword.Displayed);
             StringAssert.Contains(text, page.ErrorMessagesForMissingConfirmationPassword.Text);
         }
+
+        public static void AssertAlreadyRegisteredUserErrorMessage(this RegistrationPage page, string text)
+        {
+            Assert.IsTrue(page.ErrorMessagesForAlreadyRegisteredUser.Displayed);
+            StringAssert.Contains(text, page.ErrorMessagesForAlreadyRegisteredUser.Text);
+        }
     }
 }

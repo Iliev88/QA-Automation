@@ -289,6 +289,15 @@ namespace DesignPattern.Pages.RegistrationPage
                 return Driver.FindElement(By.XPath("//*[@id=\"pie_register\"]/li[12]/div/div/span"));
             }
         }
+
+        public IWebElement ErrorMessagesForAlreadyRegisteredUser
+        {
+            get
+            {
+                Wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id=\"post-49\"]/div/p")));
+                return Driver.FindElement(By.XPath("//*[@id=\"post-49\"]/div/p"));
+            }
+        }
     }
 }
 
