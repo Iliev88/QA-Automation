@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace DesignPattern
 {
     [TestFixture]
-    public class ToolsQATests
+    public class AdvancedTests
     {
         private IWebDriver driver;
 
@@ -54,18 +54,15 @@ namespace DesignPattern
 
         [Test]
         [Author("Iliya Iliev")]
-        [Property("Priority", "3")]
-        public void DroppableFirstTry()
+        [Property("Droppable", "1")]
+        public void DroppableFirstTest()
         {
             var droppablePage = new DroppablePage(driver);
 
-            driver.Url = droppablePage.URL;
-            Actions builder = new Actions(driver);
-
-            var drag = builder.DragAndDrop(droppablePage.Source, droppablePage.Target);
-            drag.Perform();
-
-            Assert.AreEqual("ui-widget-header ui-droppable ui-state-highlight", droppablePage.Target.GetAttribute("class"));
+            droppablePage.NavigateTo();
+            droppablePage.DragAndDrop();
+            
+            droppablePage.AssertTargetAttributeValue("ui-widget-header ui-droppable ui-state-highlight");
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 
 namespace DesignPattern.Pages.DroppablePage
 {
@@ -21,5 +22,18 @@ namespace DesignPattern.Pages.DroppablePage
             }
         }
 
+        public void NavigateTo()
+        {
+            this.Driver.Navigate().GoToUrl(this.URL);
+        }
+
+        public void DragAndDrop()
+        {
+            var builder = new Actions(this.Driver);
+
+            var drag = builder.DragAndDrop(this.Source, this.Target);
+
+            drag.Perform();
+        }
     }
 }

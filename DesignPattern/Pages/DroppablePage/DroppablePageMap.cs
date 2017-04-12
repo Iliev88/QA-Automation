@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DesignPattern.Pages.DroppablePage
 {
-    public partial class DroppablePage : BasePage
+    public partial class DroppablePage
     {
         public IWebElement Source
         {
