@@ -27,6 +27,12 @@ namespace DesignPattern.Pages.DroppablePage
             this.Driver.Navigate().GoToUrl(this.URL);
         }
 
+        public void NavigateToSecondTab()
+        {
+            var secondTab = "#tabs-2";
+            this.Driver.Navigate().GoToUrl(this.URL + secondTab);
+        }
+
         public void DragAndDrop()
         {
             var builder = new Actions(this.Driver);

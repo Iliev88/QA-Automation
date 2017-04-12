@@ -90,5 +90,18 @@ namespace DesignPattern
 
             droppablePage.AssertTargetText("Dropped!");
         }
+
+        [Test]
+        [Author("Iliya Iliev")]
+        [Property("Droppable", "1")]
+        public void DroppableFourthTest()
+        {
+            var droppablePage = new DroppablePage(driver);
+
+            droppablePage.NavigateToSecondTab();
+            //droppablePage.DragAndDrop();
+
+            //droppablePage.AssertTargetText("Dropped!");
+        }
     }
 }
