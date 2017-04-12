@@ -77,5 +77,18 @@ namespace DesignPattern
 
             droppablePage.AssertTargetAttributeValueId("droppableview");
         }
+
+        [Test]
+        [Author("Iliya Iliev")]
+        [Property("Droppable", "1")]
+        public void DroppableThirdTest()
+        {
+            var droppablePage = new DroppablePage(driver);
+
+            droppablePage.NavigateTo();
+            droppablePage.DragAndDrop();
+
+            droppablePage.AssertTargetText("Dropped!");
+        }
     }
 }

@@ -18,5 +18,10 @@ namespace DesignPattern.Pages.DroppablePage
         {
             Assert.AreEqual(idValue, page.Target.GetAttribute("id"));
         }
+
+        public static void AssertTargetText(this DroppablePage page, string text)
+        {
+            Assert.AreEqual(page.Target.Text, text);
+        }
     }
 }
