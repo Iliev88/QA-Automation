@@ -24,5 +24,21 @@ namespace DesignPattern.Pages.DroppablePage
                 return Driver.FindElement(By.XPath("//*[@id=\"droppableview\"]"));
             }
         }
+
+        public IWebElement SourceNotDroppable
+        {
+            get
+            {
+                return Driver.FindElement(By.Id("draggable-nonvalid"));
+            }
+        }
+
+        public IWebElement TargetSecondTab
+        {
+            get
+            {
+                return Driver.FindElement(By.Id("droppableaccept"));
+            }
+        }
     }
 }

@@ -99,9 +99,9 @@ namespace DesignPattern
             var droppablePage = new DroppablePage(driver);
 
             droppablePage.NavigateToSecondTab();
-            //droppablePage.DragAndDrop();
+            droppablePage.DragAndDrop();
 
-            //droppablePage.AssertTargetText("Dropped!");
+            droppablePage.AssertTargetAttributeValue("ui-widget-header ui-droppable");
         }
     }
 }
