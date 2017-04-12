@@ -64,5 +64,18 @@ namespace DesignPattern
             
             droppablePage.AssertTargetAttributeValue("ui-widget-header ui-droppable ui-state-highlight");
         }
+
+        [Test]
+        [Author("Iliya Iliev")]
+        [Property("Droppable", "1")]
+        public void DroppableSecondTest()
+        {
+            var droppablePage = new DroppablePage(driver);
+
+            droppablePage.NavigateTo();
+            droppablePage.DragAndDrop();
+
+            droppablePage.AssertTargetAttributeValueId("droppableview");
+        }
     }
 }

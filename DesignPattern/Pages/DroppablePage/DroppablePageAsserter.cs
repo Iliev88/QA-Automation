@@ -13,5 +13,10 @@ namespace DesignPattern.Pages.DroppablePage
         {
             Assert.AreEqual(classValue, page.Target.GetAttribute("class"));
         }
+
+        public static void AssertTargetAttributeValueId(this DroppablePage page, string idValue)
+        {
+            Assert.AreEqual(idValue, page.Target.GetAttribute("id"));
+        }
     }
 }
