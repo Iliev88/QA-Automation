@@ -40,5 +40,13 @@ namespace DesignPattern.Pages.DroppablePage
                 return Driver.FindElement(By.Id("droppableaccept"));
             }
         }
+
+        public IWebElement SourceSecondTabDrag
+        {
+            get
+            {
+                return Driver.FindElement(By.Id("draggableaccept"));
+            }
+        }
     }
 }

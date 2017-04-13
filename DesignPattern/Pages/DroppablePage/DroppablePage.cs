@@ -42,5 +42,14 @@ namespace DesignPattern.Pages.DroppablePage
 
             drag.Perform();
         }
+
+        public void DragAndDropSecondTab()
+        {
+            var builder = new Actions(this.Driver);
+
+            var drag = builder.DragAndDrop(this.SourceSecondTabDrag, this.TargetSecondTab);
+
+            drag.Perform();
+        }
     }
 }

@@ -112,9 +112,22 @@ namespace DesignPattern
             var droppablePage = new DroppablePage(driver);
 
             droppablePage.NavigateToSecondTab();
-            droppablePage.DragAndDrop();
+            droppablePage.DragAndDropSecondTab();
 
-            droppablePage.AssertTextSecondTarget("accept: ‘#draggableaccept’");
+            droppablePage.AssertSecondTabTargetAttributeValue("ui-widget-header ui-droppable ui-state-highlight");
+        }
+
+        [Test]
+        [Author("Iliya Iliev")]
+        [Property("Droppable", "1")]
+        public void DroppableSixthTest()
+        {
+            var droppablePage = new DroppablePage(driver);
+
+            droppablePage.NavigateToSecondTab();
+            droppablePage.DragAndDropSecondTab();
+
+            droppablePage.AssertTextSecondTarget("Dropped!");
         }
     }
 }

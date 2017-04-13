@@ -28,5 +28,10 @@ namespace DesignPattern.Pages.DroppablePage
         {
             Assert.AreEqual(page.TargetSecondTab.Text, text);
         }
+
+        public static void AssertSecondTabTargetAttributeValue(this DroppablePage page, string classValue)
+        {
+            Assert.AreEqual(classValue, page.TargetSecondTab.GetAttribute("class"));
+        }
     }
 }
