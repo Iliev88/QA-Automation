@@ -143,5 +143,18 @@ namespace DesignPattern
 
             draggablePage.AssertFirstTabSourceAttribute("ui-widget-content ui-draggable ui-draggable-handle ui-draggable-dragging");
         }
+
+        [Test]
+        [Author("Iliya Iliev")]
+        [Property("Draggable", "1")]
+        public void DraggableSecondTest()
+        {
+            var draggablePage = new DraggablePage(driver);
+
+            draggablePage.NavigateTo();
+            draggablePage.DragFirstTab();
+
+            draggablePage.AssertFirstTabSourceLocation();
+        }
     }
 }

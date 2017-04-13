@@ -13,5 +13,10 @@ namespace DesignPattern.Pages.DraggablePage
         {
             Assert.AreEqual(text, page.SourceFirstTab.GetAttribute("class"));
         }
+
+        public static void AssertFirstTabSourceLocation(this DraggablePage page)
+        {
+            Assert.AreNotSame(page.SourceFirstTab.Location, page.SourceFirstTab.Location);
+        }
     }
 }
