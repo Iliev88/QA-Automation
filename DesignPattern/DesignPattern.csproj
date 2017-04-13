@@ -92,6 +92,9 @@
     <Compile Include="Pages\RegistrationPage\RegistrationPageAsserter.cs" />
     <Compile Include="Pages\RegistrationPage\RegistrationPageMap.cs" />
     <Compile Include="NegativeTests.cs" />
+    <Compile Include="Pages\ResizablePage\ResizablePage.cs" />
+    <Compile Include="Pages\ResizablePage\ResizablePageAsserter.cs" />
+    <Compile Include="Pages\ResizablePage\ResizablePageMap.cs" />
     <Compile Include="Pages\ToolsQAHomePage\ToolsQAHomePage.cs" />
     <Compile Include="Pages\ToolsQAHomePage\ToolsQAHomePageAsserter.cs" />
     <Compile Include="Pages\ToolsQAHomePage\ToolsQAHomePageMap.cs" />

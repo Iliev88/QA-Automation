@@ -1,6 +1,7 @@
 ﻿using DesignPattern.Pages.AutomationPracticePage;
 using DesignPattern.Pages.DraggablePage;
 using DesignPattern.Pages.DroppablePage;
+using DesignPattern.Pages.ResizablePage;
 using DesignPattern.Pages.ToolsQAHomePage;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -52,7 +53,7 @@ namespace DesignPattern
             Assert.AreEqual("http://toolsqa.com/wp-content/uploads/2014/08/Toolsqa.jpg", homePage.Logo.GetAttribute("src"));
             Assert.AreEqual(2, driver.WindowHandles.Count);
         }
-        
+
         // DROPPABLE PAGE TESTS
         [Test]
         [Author("Iliya Iliev")]
@@ -63,7 +64,7 @@ namespace DesignPattern
 
             droppablePage.NavigateTo();
             droppablePage.DragAndDrop();
-            
+
             droppablePage.AssertTargetAttributeValue("ui-widget-header ui-droppable ui-state-highlight");
         }
 
@@ -209,6 +210,59 @@ namespace DesignPattern
             draggablePage.DragHorizontal();
 
             draggablePage.AssertSecondTabHorizontalSourceAttribute("draggable ui-widget-content ui-draggable ui-draggable-handle ui-draggable-dragging");
+        }
+
+        // RESIZABLE PAGE TESTS
+        [Test]
+        [Author("Iliya Iliev")]
+        [Property("Resizable", "1")]
+        public void ResizableFirstTest()
+        {
+            var resizablePage = new ResizablePage(driver);
+
+            resizablePage.NavigateTo();
+            resizablePage.IncreaseWidthAndHeightBy(100, 100);
+
+            resizablePage.AssertNewSize();
+        }
+
+        [Test]
+        [Author("Iliya Iliev")]
+        [Property("Resizable", "1")]
+        public void ResizableSecondTest()
+        {
+            var resizablePage = new ResizablePage(driver);
+
+            resizablePage.NavigateTo();
+            resizablePage.IncreaseWidthAndHeightBy(100, 0);
+
+            resizablePage.AssertNewSizeWidth();
+        }
+
+        [Test]
+        [Author("Iliya Iliev")]
+        [Property("Resizable", "1")]
+        public void ResizableThirdTest()
+        {
+            var resizablePage = new ResizablePage(driver);
+
+            resizablePage.NavigateTo();
+            resizablePage.IncreaseWidthAndHeightBy(0, 100);
+
+            resizablePage.AssertNewSizeHeight();
+        }
+
+        [Test]
+        [Author("Iliya Iliev")]
+        [Property("Resizable", "1")]
+        public void ResizableFourthTest()
+        {
+            var resizablePage = new ResizablePage(driver);
+
+            resizablePage.NavigateTo();
+            resizablePage.ResizeWindowWithoutDropping();
+
+            resizablePage.AssertWindowAttribute("ui-widget-content ui-resizable ui-resizable-resizing");
         }
     }
 }
