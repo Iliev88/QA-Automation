@@ -49,7 +49,7 @@ namespace DesignPattern
             //secondTabName.Close();
 
             Assert.AreEqual("http://toolsqa.com/wp-content/uploads/2014/08/Toolsqa.jpg", homePage.Logo.GetAttribute("src"));
-            Assert.AreEqual(1, driver.WindowHandles.Count);
+            Assert.AreEqual(2, driver.WindowHandles.Count);
         }
 
         [Test]
@@ -102,6 +102,19 @@ namespace DesignPattern
             droppablePage.DragAndDrop();
 
             droppablePage.AssertTargetAttributeValue("ui-widget-header ui-droppable");
+        }
+
+        [Test]
+        [Author("Iliya Iliev")]
+        [Property("Droppable", "1")]
+        public void DroppableFifthTest()
+        {
+            var droppablePage = new DroppablePage(driver);
+
+            droppablePage.NavigateToSecondTab();
+            droppablePage.DragAndDrop();
+
+            droppablePage.AssertTextSecondTarget("accept: ‘#draggableaccept’");
         }
     }
 }

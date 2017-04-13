@@ -27,6 +27,7 @@ namespace DesignPattern.Pages.DroppablePage
             this.Driver.Navigate().GoToUrl(this.URL);
         }
 
+        // for larger project every tab must be new page
         public void NavigateToSecondTab()
         {
             var secondTab = "#tabs-2";
