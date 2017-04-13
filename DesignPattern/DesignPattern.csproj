@@ -98,6 +98,9 @@
     <Compile Include="Pages\SelectablePage\SelectablePageMap.cs" />
     <Compile Include="Pages\SelectablePage\SelectablePage.cs" />
     <Compile Include="Pages\SelectablePage\SelectablePageAsserter.cs" />
+    <Compile Include="Pages\SortablePage\SortablePage.cs" />
+    <Compile Include="Pages\SortablePage\SortablePageAsserter.cs" />
+    <Compile Include="Pages\SortablePage\SortablePageMap.cs" />
     <Compile Include="Pages\ToolsQAHomePage\ToolsQAHomePage.cs" />
     <Compile Include="Pages\ToolsQAHomePage\ToolsQAHomePageAsserter.cs" />
     <Compile Include="Pages\ToolsQAHomePage\ToolsQAHomePageMap.cs" />

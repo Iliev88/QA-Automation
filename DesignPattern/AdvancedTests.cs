@@ -3,6 +3,7 @@ using DesignPattern.Pages.DraggablePage;
 using DesignPattern.Pages.DroppablePage;
 using DesignPattern.Pages.ResizablePage;
 using DesignPattern.Pages.SelectablePage;
+using DesignPattern.Pages.SortablePage;
 using DesignPattern.Pages.ToolsQAHomePage;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -266,6 +267,7 @@ namespace DesignPattern
             resizablePage.AssertWindowAttribute("ui-widget-content ui-resizable ui-resizable-resizing");
         }
 
+        // SELECTABLE PAGE TESTS
         [Test]
         [Author("Iliya Iliev")]
         [Property("Selectable", "1")]
@@ -303,6 +305,45 @@ namespace DesignPattern
             selectablePage.SelectItemWithoutDropping();
 
             selectablePage.AssertSelectedItemAttribute("ui-widget-content ui-corner-left ui-selectee ui-selecting");
+        }
+
+        [Test]
+        [Author("Iliya Iliev")]
+        [Property("Sortable", "1")]
+        public void SortableFirstTest()
+        {
+            var sortablePage = new SortablePage(driver);
+
+            sortablePage.NavigateTo();
+            sortablePage.DragAndDrop();
+
+            sortablePage.AssertTargetLocation();
+        }
+
+        [Test]
+        [Author("Iliya Iliev")]
+        [Property("Sortable", "1")]
+        public void SortableSecondTest()
+        {
+            var sortablePage = new SortablePage(driver);
+
+            sortablePage.NavigateTo();
+            sortablePage.ReverseDragAndDrop();
+
+            sortablePage.AssertTargetLocation();
+        }
+
+        [Test]
+        [Author("Iliya Iliev")]
+        [Property("Sortable", "1")]
+        public void SortableThirdTest()
+        {
+            var sortablePage = new SortablePage(driver);
+
+            sortablePage.NavigateTo();
+            sortablePage.SortWithoutDropping();
+
+            sortablePage.AssertSortingItemAttribute("ui-state-default ui-corner-left ui-sortable-handle ui-sortable-helper");
         }
     }
 }
