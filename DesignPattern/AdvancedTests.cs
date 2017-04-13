@@ -52,7 +52,8 @@ namespace DesignPattern
             Assert.AreEqual("http://toolsqa.com/wp-content/uploads/2014/08/Toolsqa.jpg", homePage.Logo.GetAttribute("src"));
             Assert.AreEqual(2, driver.WindowHandles.Count);
         }
-
+        
+        // DROPPABLE PAGE TESTS
         [Test]
         [Author("Iliya Iliev")]
         [Property("Droppable", "1")]
@@ -131,6 +132,7 @@ namespace DesignPattern
             droppablePage.AssertTextSecondTarget("Dropped!");
         }
 
+        // DRAGGABLE PAGE TESTS
         [Test]
         [Author("Iliya Iliev")]
         [Property("Draggable", "1")]
@@ -155,6 +157,58 @@ namespace DesignPattern
             draggablePage.DragFirstTab();
 
             draggablePage.AssertFirstTabSourceLocation();
+        }
+
+        [Test]
+        [Author("Iliya Iliev")]
+        [Property("Draggable", "1")]
+        public void DraggableThirdTest()
+        {
+            var draggablePage = new DraggablePage(driver);
+
+            draggablePage.NavigateToSecondTab();
+            draggablePage.DragVertical();
+
+            draggablePage.AssertSecondTabVerticalSourceLocation();
+        }
+
+        [Test]
+        [Author("Iliya Iliev")]
+        [Property("Draggable", "1")]
+        public void DraggableFourthTest()
+        {
+            var draggablePage = new DraggablePage(driver);
+
+            draggablePage.NavigateToSecondTab();
+            draggablePage.DragVertical();
+
+            draggablePage.AssertSecondTabVerticalSourceAttribute("draggable ui-widget-content ui-draggable ui-draggable-handle ui-draggable-dragging");
+        }
+
+        [Test]
+        [Author("Iliya Iliev")]
+        [Property("Draggable", "1")]
+        public void DraggableFifthTest()
+        {
+            var draggablePage = new DraggablePage(driver);
+
+            draggablePage.NavigateToSecondTab();
+            draggablePage.DragHorizontal();
+
+            draggablePage.AssertSecondTabHorizontalSourceLocation();
+        }
+
+        [Test]
+        [Author("Iliya Iliev")]
+        [Property("Draggable", "1")]
+        public void DraggableSixthTest()
+        {
+            var draggablePage = new DraggablePage(driver);
+
+            draggablePage.NavigateToSecondTab();
+            draggablePage.DragHorizontal();
+
+            draggablePage.AssertSecondTabHorizontalSourceAttribute("draggable ui-widget-content ui-draggable ui-draggable-handle ui-draggable-dragging");
         }
     }
 }

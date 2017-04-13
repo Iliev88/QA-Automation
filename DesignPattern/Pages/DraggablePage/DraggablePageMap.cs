@@ -16,5 +16,21 @@ namespace DesignPattern.Pages.DraggablePage
                 return this.Driver.FindElement(By.Id("draggable"));
             }
         }
+
+        public IWebElement SourceVerticalSecondTab
+        {
+            get
+            {
+                return this.Driver.FindElement(By.Id("draggabl"));
+            }
+        }
+
+        public IWebElement SourceHorizontalSecondTab
+        {
+            get
+            {
+                return this.Driver.FindElement(By.Id("draggabl2"));
+            }
+        }
     }
 }
