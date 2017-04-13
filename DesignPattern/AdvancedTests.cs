@@ -1,4 +1,5 @@
 ﻿using DesignPattern.Pages.AutomationPracticePage;
+using DesignPattern.Pages.DraggablePage;
 using DesignPattern.Pages.DroppablePage;
 using DesignPattern.Pages.ToolsQAHomePage;
 using NUnit.Framework;
@@ -128,6 +129,19 @@ namespace DesignPattern
             droppablePage.DragAndDropSecondTab();
 
             droppablePage.AssertTextSecondTarget("Dropped!");
+        }
+
+        [Test]
+        [Author("Iliya Iliev")]
+        [Property("Draggable", "1")]
+        public void DraggableFirstTest()
+        {
+            var draggablePage = new DraggablePage(driver);
+
+            draggablePage.NavigateTo();
+            draggablePage.DragFirstTab();
+
+            draggablePage.AssertFirstTabSourceAttribute("ui-widget-content ui-draggable ui-draggable-handle ui-draggable-dragging");
         }
     }
 }
