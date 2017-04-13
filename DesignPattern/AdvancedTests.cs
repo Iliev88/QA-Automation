@@ -2,6 +2,7 @@
 using DesignPattern.Pages.DraggablePage;
 using DesignPattern.Pages.DroppablePage;
 using DesignPattern.Pages.ResizablePage;
+using DesignPattern.Pages.SelectablePage;
 using DesignPattern.Pages.ToolsQAHomePage;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -263,6 +264,45 @@ namespace DesignPattern
             resizablePage.ResizeWindowWithoutDropping();
 
             resizablePage.AssertWindowAttribute("ui-widget-content ui-resizable ui-resizable-resizing");
+        }
+
+        [Test]
+        [Author("Iliya Iliev")]
+        [Property("Selectable", "1")]
+        public void SelectableFirstTest()
+        {
+            var selectablePage = new SelectablePage(driver);
+
+            selectablePage.NavigateTo();
+            selectablePage.DragAndDropOneItem();
+
+            selectablePage.AssertSelectedItemAttribute("ui-widget-content ui-corner-left ui-selectee ui-selected");
+        }
+
+        [Test]
+        [Author("Iliya Iliev")]
+        [Property("Selectable", "1")]
+        public void SelectableSecondTest()
+        {
+            var selectablePage = new SelectablePage(driver);
+
+            selectablePage.NavigateTo();
+            selectablePage.DragAndDropTwoItems();
+
+            selectablePage.AssertSelectedItemAttribute("ui-widget-content ui-corner-left ui-selectee ui-selected");
+        }
+
+        [Test]
+        [Author("Iliya Iliev")]
+        [Property("Selectable", "1")]
+        public void SelectableThirdTest()
+        {
+            var selectablePage = new SelectablePage(driver);
+
+            selectablePage.NavigateTo();
+            selectablePage.SelectItemWithoutDropping();
+
+            selectablePage.AssertSelectedItemAttribute("ui-widget-content ui-corner-left ui-selectee ui-selecting");
         }
     }
 }
