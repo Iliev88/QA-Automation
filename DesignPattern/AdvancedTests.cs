@@ -6,11 +6,14 @@ using DesignPattern.Pages.SelectablePage;
 using DesignPattern.Pages.SortablePage;
 using DesignPattern.Pages.ToolsQAHomePage;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +34,31 @@ namespace DesignPattern
         [TearDown]
         public void CleanUp()
         {
+            var logFile = ConfigurationManager.AppSettings["Logs"] + "log" + ".txt";
+            File.AppendAllText(logFile, TestContext.CurrentContext.Result.Outcome + " ... " + 
+                TestContext.CurrentContext.Test.FullName + " ... " +
+                TestContext.CurrentContext.Test.Name + Environment.NewLine);
+
+            if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
+            {
+                var fileNameLog = ConfigurationManager.AppSettings["Logs"] + TestContext.CurrentContext.Test.Name + ".txt";
+
+                if (File.Exists(fileNameLog))
+                {
+                    File.Delete(fileNameLog);
+                }
+                File.WriteAllText(fileNameLog, TestContext.CurrentContext.Test.FullName + " ... " + TestContext.CurrentContext.Result.FailCount);
+
+                var screenshot = ((ITakesScreenshot)this.driver).GetScreenshot();
+                var fileNameScreenshot = ConfigurationManager.AppSettings["Logs"] + TestContext.CurrentContext.Test.Name;
+
+                if (File.Exists(fileNameScreenshot))
+                {
+                    File.Delete(fileNameScreenshot);
+                }
+                screenshot.SaveAsFile(fileNameScreenshot + ".jpeg", ScreenshotImageFormat.Jpeg);
+            }
+                       
             driver.Quit();
         }
 
@@ -307,6 +335,7 @@ namespace DesignPattern
             selectablePage.AssertSelectedItemAttribute("ui-widget-content ui-corner-left ui-selectee ui-selecting");
         }
 
+        // SORTABLE PAGE TESTS
         [Test]
         [Author("Iliya Iliev")]
         [Property("Sortable", "1")]
