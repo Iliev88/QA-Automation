@@ -74,6 +74,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\Logger.cs" />
     <Compile Include="Models\AccessExcelData.cs" />
     <Compile Include="Models\RegistrateUser.cs" />
     <Compile Include="Pages\AutomationPracticePage\AutomationPage.cs" />

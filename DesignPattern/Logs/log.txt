@@ -45,3 +45,6 @@ Passed ... DesignPattern.TestClass.RegisterWithUnmatchedPasswords ... RegisterWi
 Passed ... DesignPattern.TestClass.RegisterWithWrongEmail ... RegisterWithWrongEmail
 Passed ... DesignPattern.TestClass.RegisterWithWrongEmailAndMismatchedAndShortPasswords ... RegisterWithWrongEmailAndMismatchedAndShortPasswords
 Passed ... DesignPattern.TestClass.RegisterWithWrongEmailAndMismatchedPasswords ... RegisterWithWrongEmailAndMismatchedPasswords
+Passed ... DesignPattern.AdvancedTests.DraggableFirstTest ... DraggableFirstTest
+Passed ... DesignPattern.TestClass.RegisterWithoutLastName ... RegisterWithoutLastName
+Passed ... DesignPattern.TestClass.RegisterWithoutLastName ... RegisterWithoutLastName

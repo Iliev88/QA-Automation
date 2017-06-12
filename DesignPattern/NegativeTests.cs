@@ -70,20 +70,21 @@ namespace DesignPattern
 
             registrationPage.AssertRegistrationPageIsOpen("Registration");
         }
-
-
+        
         [Test]
         [Property("Negative Tests", 1)]
         [Author("Iliya Iliev")]
         public void RegisterWithoutLastName()
         {
             var registrationPage = new RegistrationPage(driver);
-            var user = AccessExcelData.GetTestData("RegisterWithoutLastName");
+            var user = AccessExcelData.GetTestData(TestContext.CurrentContext.Test.MethodName);
             
             registrationPage.NavigateTo();
             registrationPage.FillRegistrationForm(user);
 
-            registrationPage.AssertNamesErrorMessage("This field is required");
+            var asserter = typeof(RegistrationPageAsserter).GetMethod(user.Asserter);
+            asserter.Invoke(null, new object[] { registrationPage, "* This field is required" });
+            // registrationPage.AssertNamesErrorMessage("This field is required");
 
         }
 

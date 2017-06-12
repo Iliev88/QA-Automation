@@ -4,153 +4,39 @@ namespace SeleniumDesignPatternsDemo.Models
 {
     public class RegistrateUser
     {
-        private string key;
-        private string firstName;
-        private string lastName;
-        private string martialStatus;
-        private string hobbies;
-        private string country;
-        private string birthMonth;
-        private string birthDay;
-        private string birthYear;
-        private string phone;
-        private string username;
-        private string email;
-        private string picture;
-        private string description;
-        private string password;
-        private string confirmPassword;
+        public string Key { get; set; }
 
-        public RegistrateUser(string key,
-                              string firstName,
-                              string lastName,
-                              string martialStatus,
-                              string hobbies,
-                              string country,
-                              string birthMonth,
-                              string birthDay,
-                              string birthYear,
-                              string phone,
-                              string username,
-                              string email,
-                              string picture,
-                              string description,
-                              string password,
-                              string confirmPassword
-                              )
-        {
-            this.key = key;
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.martialStatus = martialStatus;
-            this.hobbies = hobbies;
-            this.country = country;
-            this.birthMonth = birthMonth;
-            this.birthDay = birthDay;
-            this.birthYear = birthYear;
-            this.phone = phone;
-            this.username = username;
-            this.email = email;
-            this.picture = picture;
-            this.description = description;
-            this.password = password;
-            this.confirmPassword = confirmPassword;
-        }
+        public string FirstName { get; set; }
 
-        public string Key
-        {
-            get { return this.key; }
-            set { this.key = value; }
-        }
+        public string LastName { get; set; }
 
-        public string FirstName
-        {
-            get { return this.firstName; }
-            set { this.firstName = value; }
-        }
+        public string MartialStatus { get; set; }
 
-        public string LastName
-        {
-            get { return this.lastName; }
-            set { this.lastName = value; }
-        }
+        public string Hobbies { get; set; }
 
-        public string MartialStatus
-        {
-            get { return martialStatus; }
-            set { martialStatus = value; }
-        }
+        public string Country { get; set; }
 
-        public string Hobbies
-        {
-            get { return hobbies; }
-            set { hobbies = value; }
-        }
+        public string BirthMonth { get; set; }
 
-        public string Country
-        {
-            get { return country; }
-            set { country = value; }
-        }
+        public string BirthDay { get; set; }
 
-        public string BirthMonth
-        {
-            get { return birthMonth; }
-            set { birthMonth = value; }
-        }
+        public string BirthYear { get; set; }
 
-        public string BirthDay
-        {
-            get { return birthDay; }
-            set { birthDay = value; }
-        }
+        public string Phone { get; set; }
 
-        public string BirthYear
-        {
-            get { return birthYear; }
-            set { birthYear = value; }
-        }
+        public string UserName { get; set; }
 
-        public string Phone
-        {
-            get { return phone; }
-            set { phone = value; }
-        }
+        public string Email { get; set; }
 
-        public string UserName
-        {
-            get { return username; }
-            set { username = value; }
-        }
+        public string Picture { get; set; }
 
-        public string Email
-        {
-            get { return email; }
-            set { email = value; }
-        }
+        public string Description { get; set; }
 
-        public string Picture
-        {
-            get { return picture; }
-            set { picture = value; }
-        }
+        public string Password { get; set; }
 
-        public string Description
-        {
-            get { return description; }
-            set { description = value; }
-        }
+        public string ConfirmPassword { get; set; }
 
-        public string Password
-        {
-            get { return password; }
-            set { password = value; }
-        }
+        public string Asserter { get; set; }
 
-        public string ConfirmPassword
-        {
-            get { return confirmPassword; }
-            set { confirmPassword = value; }
-        }
     }
 }
